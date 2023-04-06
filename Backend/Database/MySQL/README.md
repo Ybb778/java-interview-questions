@@ -19,7 +19,7 @@ Mysql 数据库技术
 
 客户订单表 (C\_ORDER) 有以下字段: id, custom\_id, commodity, count, order\_date.
 
-```
+```sql
 	SELECT * FROM c_order ORDER BY order_date DESC LIMIT 0,5;
 ```
 
@@ -39,7 +39,7 @@ Mysql 数据库技术
 
 *   写一个 SQL 语句，查询选修了计算机原理的学生学号和姓名
 
-```
+```sql
 	select 学号，姓名 from Student where 学号 in（select 学号 from Sc where 课程编号 in(Select 课程编号 from Course where 课程名称 = ‘计算机原理’)）
 ```
 

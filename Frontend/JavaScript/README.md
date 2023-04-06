@@ -14,7 +14,7 @@ JavaScript 语言和 jQuery 技术
 
 ### 如何在 JavaScript 中每 x 秒调用一个函数？
 
-```
+```javascript
 	setInterval(function (){ alert("Hello"); }, 3000);
 ```
 
@@ -71,51 +71,18 @@ $() 函数是 jQuery () 函数的别称。$() 函数用于将任何对象包裹�
 
 *   从 Google CDN 加载 jQuery Framework 的代码
 
-```
+```javascript
 	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 ```
 
 *   从 Microsoft CDN 加载 jQuery Framework 的代码
 
-```
+```javascript
 	 <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.9.1.min.js"> </script>
 ```
 
 *   从 jQuery 站点加载 jQuery Framework 的代码（EdgeCast CDN）
 
-```
+```javascript
 	 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 ```
-
-JSP 技术
-------
-
-### 说一说 Servlet 的生命周期？
-
-1.  Servlet 有良好的生存期的定义，包括加载和实例化、初始化、处理请求以及服务结束。这个生存期由 javax.servlet.Servlet 接口的 init (),service () 和 destroy 方法表达。
-2.  Servlet 被服务器实例化后，容器运行其 init 方法，请求到达时运行其 service 方法，service 方法自动派遣运行与请求对应的 do\*\*\*() 方法（doGet，doPost）等，当服务器决定将实例销毁的时候调用其 destroy 方法。
-3.  web 容器加载 servlet，生命周期开始。通过调用 servlet 的 init () 方法进行 servlet 的初始化。通过调用 service () 方法实现，根据请求的不同调用不同的 do\*\*\*() 方法。结束服务，web 容器调用 servlet 的 destroy () 方法。
-
-### jsp 和 servlet 的区别、共同点、各自应用的范围？
-
-JSP 是 Servlet 技术的扩展，本质上就是 Servlet 的简易方式。JSP 编译后是 “类 servlet”。Servlet 和 JSP 最主要的不同点在于：Servlet 的应用逻辑是在 Java 文件中，并且完全从表示层中的 HTML 里分离开来。而 JSP 的情况是 Java 和 HTML 可以组合成一个扩展名为.jsp 的文件。JSP 侧重于视图，Servlet 主要用于控制逻辑。在 struts 框架中，JSP 位于 MVC 设计模式的视图层，而 Servlet 位于 控制层.
-
-### Servlet API 中 forward () 与 redirect () 的区别？
-
-*   从地址栏显示来说
-
-forward 是服务器请求资源，服务器直接访问目标地址的 URL, 把那个 URL 的响应内容读取过来，然后把这些内容再发给浏览器。浏览器根本不知道服务器发送的内容从哪里来的，所以它的地址栏还是原来的地址. redirect 是服务端根据逻辑，发送一个状态码，告诉浏览器重新去请求那个地址。所以地址栏显示的是新的 URL. 所以 redirect 等于客 户端向服务器端发出两次 request，同时也接受两次 response。
-
-*   从数据共享来说
-
-forward: 转发页面和转发到的页面可以共享 request 里面的数据.redirect: 不能共享数据.redirect 不仅可以重定向到当前应用程序的其他资源，还可以重定向到同一个站点上的其他应用程序中的资源，甚至是使用绝对 URL 重定向到其他站点的资源.forward 方法 只能在同一个 Web 应用程序内的资源之间转发请求.forward 是服务器内部的一种操作.redirect 是服务器通知客户端，让客户端重新发起请求。所以，你可以说 redirect 是一种间接的请求，但是你不能说” 一个请求是属于 forward 还是 redirect “。
-
-*   从运用地方来说
-
-forward: 一般用于用户登陆的时候，根据角色转发到相应的模块. redirect: 一般用于用户注销登陆时返回主页面和跳转到其它的网站等。
-
-*   从效率来说
-
-forward: 高。
-
-redirect: 低。
