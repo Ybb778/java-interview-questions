@@ -2,7 +2,7 @@
 
 * [JDBC技术](Bachend/Database/JDBC/)
 
-* [MySQL数据库技术](Bachend/Database/MySQL/)
+* [MySQL数据库技术](Backend/Database/MySQL/)
 
 * [JavaScript语言和jQuery技术](Frontend/JavaScript/)
 
@@ -12,7 +12,7 @@
 
 * [Spring MVC框架](Backend/Spring/SpringMVC/)
 
-* [MyBatis框架](Bachend/Database/MyBatis/)
+* [MyBatis框架](Backend/Database/MyBatis/)
 
 * [Shiro安全框架](Backend/Security/Shiro/)
 
@@ -20,7 +20,7 @@
 
 * [Linux系统](System/Linux/)
 
-* [Redis存储系统](Bachend/Database/Redis/)
+* [Redis存储系统](Backend/Database/Redis/)
 
 * [Spring Boot框架](Backend/Spring/SpringBoot/)
 

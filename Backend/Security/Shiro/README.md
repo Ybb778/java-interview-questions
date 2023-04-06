@@ -1,17 +1,17 @@
 Shiro 安全框架
-----------
+==========
 
-### Shiro 可以完成哪些工作？
+## Shiro 可以完成哪些工作？
 
 Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与 Web 集成、缓存等。
 
-### Apache Shiro 的三大核心组件
+## Apache Shiro 的三大核心组件
 
 1.  Subject ：当前用户的操作。
 2.  SecurityManager：用于管理所有的 Subject。
 3.  Realms：用于进行权限信息的验证。
 
-### Shiro 有哪些组件？
+## Shiro 有哪些组件？
 
 1.  Authentication：身份认证 / 登录，验证用户是不是拥有相应的身份。
 2.  Authorization：授权，即权限验证，验证某个已认证的用户是否拥有某个权限；即判断用户是否能做事情，常见的如：验证某个用户是否拥有某个角色。或者细粒度的验证某个用户对某个资源是否具有某个权限。
@@ -24,11 +24,11 @@ Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与 W
 9.  Run As：允许一个用户假装为另一个用户（如果他们允许）的身份进行访问。
 10.  Remember Me：记住我，这个是非常常见的功能，即一次登录后，下次再来的话不用登录了。
 
-### 比较 Spring Security 和 Shiro
+## 比较 Spring Security 和 Shiro
 
 相比 Spring Security， Shiro 在保持强大功能的同时，使用简单性和灵活性。 SpringSecurity: 即使是一个一个简单的请求，最少得经过它的 8 个 Filter。Spring Security 必须在 Spring 的环境下使用。初学 Spring Security，曲线还是较大，需要深入学习其源码和框架， 配置起来也较费力。
 
-### Shiro 的优点
+## Shiro 的优点
 
 1.  简单的身份认证，支持多种数据源。
 2.  对角色的简单的授权，支持细粒度的授权 (方法级)。

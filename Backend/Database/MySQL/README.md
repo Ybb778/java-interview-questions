@@ -1,11 +1,11 @@
 Mysql 数据库技术
------------
+===========
 
-### 数据库 MySQL 分页时用的语句
+## 数据库 MySQL 分页时用的语句
 
 使用 `limit` 关键字。`Select * from 表名 where 条件 limit 开始位置,结束位置`。通过动态的改变开始和结束位置的值来实现分页。
 
-### 根据你以往的经验简单叙述一下 MySQL 的优化
+## 根据你以往的经验简单叙述一下 MySQL 的优化
 
 1.  尽可能使用更小的整数类型（`mediumint` 就比 `int` 更合适）
 2.  如果想要清空表的所有记录，建议用 `truncate table tablename` 而不是 `delete from tablename`
@@ -13,7 +13,7 @@ Mysql 数据库技术
 4.  避免出现 `SELECT * FROM table` 语句，要明确查出的字段。
 5.  小心使用 `IN` 和 `OR`，需要注意 `IN` 集合中的数据量。建议集合中的数据不超过 200 个。
 
-### 有两张表；请用 SQL 查询，所有的客户订单日期最新的前五条订单记录。
+## 有两张表；请用 SQL 查询，所有的客户订单日期最新的前五条订单记录。
 
 客户信息表 (c\_CUSTOM) 有以下字段：id、name、mobile
 
@@ -23,19 +23,19 @@ Mysql 数据库技术
 	SELECT * FROM c_order ORDER BY order_date DESC LIMIT 0,5;
 ```
 
-### 数据库设计中，一对多如何处理？
+## 数据库设计中，一对多如何处理？
 
 数据库外键关系表示的其实是一种一对多关系，所以处理一对多时可以使用外键。
 
-### 数据库设计中，多对多一般如何处理？
+## 数据库设计中，多对多一般如何处理？
 
 引入中间表，把一个多对多表示为两个一对多。
 
-### MySQL 数据库中，常用的数据类型
+## MySQL 数据库中，常用的数据类型
 
 <table width="619"><tbody><tr><td width="132">类型名称</td><td width="423">说明</td></tr><tr><td>int(Integer)</td><td>整数类型</td></tr><tr><td>double</td><td>小数类型</td></tr><tr><td>decimal(m,d)</td><td>指定整数位与小数位长度的小数类型</td></tr><tr><td>date</td><td>日期类型，格式为 yyyy-MM-dd，包含年月日，不包含时分秒</td></tr><tr><td>datetime</td><td>日期类型，格式为 yyyy-MM-dd HH:mm:ss，包含年月日时分秒</td></tr><tr><td>timestamp</td><td>日期类型，时间戳</td></tr><tr><td>varchar(M)</td><td>文本类型，M 为 0~65535 之间的整数</td></tr></tbody></table>
 
-### Student 学生表（学号，姓名、性别、年龄、组织部门），Course 课程表（编号，课程名称），Sc 选课表（学号，课程编号，成绩）
+## Student 学生表（学号，姓名、性别、年龄、组织部门），Course 课程表（编号，课程名称），Sc 选课表（学号，课程编号，成绩）
 
 *   写一个 SQL 语句，查询选修了计算机原理的学生学号和姓名
 
@@ -49,7 +49,7 @@ Mysql 数据库技术
 	select 课程名称 from Course where 编号 in (select Sc.课程编号 from Student,Sc where Student.姓名=’周星驰’ and Student.学号 = Sc.学号)
 ```
 
-### 表结构说明
+## 表结构说明
 
 下面是学生表的（Student）的结构说明
 

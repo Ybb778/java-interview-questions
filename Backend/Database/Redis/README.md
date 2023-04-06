@@ -1,18 +1,18 @@
 Redis 存储系统
-----------
+==========
 
-### 什么是 Redis？
+## 什么是 Redis？
 
 Remote Dictionary Server (Redis) 是一个开源的使用 ANSI C 语言编写、支持网络、可基于内存亦可持久化的日志型、Key- Value 数据库，并提供多种语言的 API。它通常被称为数据结构服务器，因为值（value）可以是 字符串 (String), 哈希 (Map), 列表 (list), 集合 (sets) 和 有序集合 (sorted sets) 等类型。
 
-### Redis 的特点什么是？
+## Redis 的特点什么是？
 
 1.  支持多种数据结构，如 String (字符串)、 List (列表)、Hash (哈希表)、Set (集合)、Sorted Set (有序集合)、HyperLogLog (基数估算)。
 2.  支持持久化操作，可以进行 aof 及 rdb 数据持久化到磁盘，从而进行数据备份或数据恢复等操作，较好的防止数据丢失的手段。
 3.  支持通过 Replication 进行数据复制，通过 master-slave 机制，可以实时进行数据的同步复制，支持多级复制和增量复制，master-slave 机制是 Redis 进行 HA 的重要手段。
 4.  单进程请求，所有命令串行执行，并发情况下不需要考虑数据一致性问题。
 
-### Redis 数据类型有哪些？
+## Redis 数据类型有哪些？
 
 1.  String (字符串)
 2.  Hash (hash 表)
@@ -20,12 +20,12 @@ Remote Dictionary Server (Redis) 是一个开源的使用 ANSI C 语言编写、
 4.  Set (集合)
 5.  Sorted Set (有序集合 zset)
 
-### Redis 的配置以及持久化方案有几种？
+## Redis 的配置以及持久化方案有几种？
 
 1.  RDB 方式
 2.  AOF 方式
 
-### Redis 中的常用命令哪些？
+## Redis 中的常用命令哪些？
 
 1.  hset 存储一个哈希键值对的集合
 2.  hget 获取一个哈希键的值
@@ -38,11 +38,11 @@ Remote Dictionary Server (Redis) 是一个开源的使用 ANSI C 语言编写、
 9.  keys \* 返回所有的 key 可以加 \* 通配
 10.  exists key 判断 string 类型一个 key 是否存在 如果存在返回 1 否则返回 0
 
-### Redis 主要消耗什么物理资源？
+## Redis 主要消耗什么物理资源？
 
 内存
 
-### Redis 有哪几种数据淘汰策略？
+## Redis 有哪几种数据淘汰策略？
 
 1.  noeviction: 返回错误当内存限制达到，并且客户端尝试执行会让更多内存被使用的命令。
 2.  allkeys-lru: 尝试回收最少使用的键（LRU），使得新添加的数据有空间存放。
@@ -51,15 +51,15 @@ Remote Dictionary Server (Redis) 是一个开源的使用 ANSI C 语言编写、
 5.  volatile-random: 回收随机的键使得新添加的数据有空间存放，但仅限于在过期集合的键。
 6.  volatile-ttl: 回收在过期集合的键，并且优先回收存活时间（TTL）较短的键，使得新添加的数据有空间存放。
 
-### Redis 官方为什么不提供 Windows 版本？
+## Redis 官方为什么不提供 Windows 版本？
 
 因为目前 Linux 版本已经相当稳定，而且用户量很大，无需开发 windows 版本，反而会带来兼容性等问题。
 
-### 为什么 Redis 需要把所有数据放到内存中？
+## 为什么 Redis 需要把所有数据放到内存中？
 
 Redis 为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以 Redis 具有快速和数据持久化的特征，如果不将数据放在内存中，磁盘 I/O 速度为严重影响 Redis 的性能。在内存越来越便宜的今天，Redis 将会越来越受欢迎， 如果设置了最大使用的内存，则数据已有记录数达到内存限值后不能继续插入新值。
 
-### Redis 有哪些适合的场景？
+## Redis 有哪些适合的场景？
 
 1.  会话缓存（Session Cache）：最常用的一种使用 Redis 的情景是会话缓存（Session Cache），用 Redis 缓存会话比其他存储（如 Memcached）的优势在于：Redis 提供持久化。当维护一个不是严格要求一致性的缓存时，如果用户的购物车信息全部丢失，大部分人都会不高兴的，现在，他们还会这样吗？幸运的是，随着 Redis 这些年的改进，很容易找到怎么恰当的使用 Redis 来缓存会话的文档。甚至广为人知的商业平台 Magento 也提供 Redis 的插件。
 2.  全页缓存（FPC）：除基本的会话 token 之外，Redis 还提供很简便的 FPC 平台。回到一致性问题，即使重启了 Redis 实例，因为有磁盘的持久化，用户也不会看到页面加载速度的下降，这是一个极大改进，类似 PHP 本地 FPC。再次以 Magento 为例，Magento 提供一个插件来使用 Redis 作为全页缓存后端。此外，对 WordPress 的用户来说，Pantheon 有一个非常好的插件 wp-redis，这个插件能帮助你以最快速度加载你曾浏览过的页面。
