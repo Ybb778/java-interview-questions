@@ -1,6 +1,6 @@
 * [JavaSE编程基础](Backend/JavaSE/)
 
-* [JDBC技术](Bachend/Database/JDBC/)
+* [JDBC技术](Backend/Database/JDBC/)
 
 * [MySQL数据库技术](Backend/Database/MySQL/)
 
