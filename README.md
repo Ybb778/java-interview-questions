@@ -283,37 +283,37 @@ Mysql 数据库技术
 
 ### 查询 “001” 课程比 “002” 课程成绩高的所有学生的学号；
 
-```
+```sql
 	select a.s_id from (select s_id,score from SC where C_ID='001') a,(select s_id,scorefrom SC where C_ID='002') b where a.score>b.score and a.s_id=b.s_id;
 ```
 
 ### 查询平均成绩大于 60 分的同学的学号和平均成绩；
 
-```
+```sql
 	select S_ID,avg(score) from sc group by S_ID having avg(score) >60;
 ```
 
 ### 查询所有同学的学号、姓名、选课数、总成绩；
 
-```
+```sql
 	select Student.S_ID,Student.Sname,count(SC.C_ID),sum(score) from Student left Outer join SC on Student.S_ID=SC.S_ID group by Student.S_ID,Sname
 ```
 
 ### 查询姓 “李” 的老师的个数；
 
-```
+```sql
 	select count(distinct(Tname)) from Teacher where Tname like '李%';
 ```
 
 ### 查询所有课程成绩小于 60 分的同学的学号、姓名；
 
-```
+```sql
 	select S_ID,Sname from Student where S_ID not in (select S.S_ID from Student AS S,SC where S.S_ID=SC.S_ID and score>60);
 ```
 
 ### 查询至少有一门课与学号为 “1001” 的同学所学相同的同学的学号和姓名；
 
-```
+```sql
 	select distinct S_ID,Sname from Student,SC where Student.S_ID=SC.S_ID and SC.C_ID in (select C_ID from SC where S_ID='1001');
 ```
 
