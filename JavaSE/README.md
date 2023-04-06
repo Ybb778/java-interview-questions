@@ -1,6 +1,6 @@
 ## JavaSE编程基础
 
-![](../image/R-C-1-1.img)
+![](https://snowice.fun/wp-content/uploads/2023/03/R-C-1-1.jpg)
 
 ### JDK,JRE,JVM 三者关系？
 
@@ -89,7 +89,7 @@ StringBuffer 仅能获得 10%~15% 左右的性能提升，但却要冒多线程�
 
 ChatGPT 的回答：
 
-![](../image/chatgpt.jpg)
+![](https://image.snowice.fun/blog-image/java/javamsbd/java%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B801.png)
 
 ### 自动装箱与拆箱
 
