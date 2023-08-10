@@ -45,9 +45,9 @@ java.util.Date 包含日期和时间信息，而 java.sql.Date 只包含日期�
 
 事务是作为单个逻辑工作单元执行的一系列操作。一个逻辑工作单元必须有四个属性，称为原子性、一致性、隔离性和持久性 (ACID) 属性，只有这样才能成为一个事务。JDBC 处理事务有如下操作：
 
-*   conn.setAutoCommit (false); 设置提交方式为手动提交。
-*   conn.commit (); 提交事务。
-*   conn.rollback (); 回滚操作。
+*   `conn.setAutoCommit(false)`; 设置提交方式为手动提交。
+*   `conn.commit()`; 提交事务。
+*   `conn.rollback()`; 回滚操作。
 
 提交与回滚只选择一个执行。正常情况下，提交事务。如果出现异常，则回滚。
 
