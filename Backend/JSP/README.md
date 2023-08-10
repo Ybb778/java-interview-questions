@@ -3,9 +3,9 @@ JSP 技术
 
 ## 说一说 Servlet 的生命周期？
 
-1.  Servlet 有良好的生存期的定义，包括加载和实例化、初始化、处理请求以及服务结束。这个生存期由 javax.servlet.Servlet 接口的 init (),service () 和 destroy 方法表达。
-2.  Servlet 被服务器实例化后，容器运行其 init 方法，请求到达时运行其 service 方法，service 方法自动派遣运行与请求对应的 do\*\*\*() 方法（doGet，doPost）等，当服务器决定将实例销毁的时候调用其 destroy 方法。
-3.  web 容器加载 servlet，生命周期开始。通过调用 servlet 的 init () 方法进行 servlet 的初始化。通过调用 service () 方法实现，根据请求的不同调用不同的 do\*\*\*() 方法。结束服务，web 容器调用 servlet 的 destroy () 方法。
+1.  `Servlet` 有良好的生存期的定义，包括加载和实例化、初始化、处理请求以及服务结束。这个生存期由 javax.servlet.Servlet 接口的 `init()`,`service ()` 和 `destroy` 方法表达。
+2.  `Servlet` 被服务器实例化后，容器运行其 `init` 方法，请求到达时运行其 `service` 方法，service 方法自动派遣运行与请求对应的 do\*\*\*() 方法（doGet，doPost）等，当服务器决定将实例销毁的时候调用其 `destroy` 方法。
+3.  `Web` 容器加载 `Servlet`，生命周期开始。通过调用 `Servlet` 的 `init ()` 方法进行 `Servlet` 的初始化。通过调用 `service()` 方法实现，根据请求的不同调用不同的 do\*\*\*() 方法。结束服务，`Web` 容器调用 `Servlet` 的 destroy () 方法。
 
 ## JSP 和 Servlet 的区别、共同点、各自应用的范围？
 
@@ -15,27 +15,31 @@ JSP 是 Servlet 技术的扩展，本质上就是 Servlet 的简易方式。JSP 
 
 *   从地址栏显示来说
 
-forward 是服务器请求资源，服务器直接访问目标地址的 URL, 把那个 URL 的响应内容读取过来，然后把这些内容再发给浏览器。浏览器根本不知道服务器发送的内容从哪里来的，所以它的地址栏还是原来的地址. redirect 是服务端根据逻辑，发送一个状态码，告诉浏览器重新去请求那个地址。所以地址栏显示的是新的 URL. 所以 redirect 等于客 户端向服务器端发出两次 request，同时也接受两次 response。
+1. `forward` 是服务器请求资源，服务器直接访问目标地址的 URL, 把那个 URL 的响应内容读取过来，然后把这些内容再发给浏览器。浏览器根本不知道服务器发送的内容从哪里来的，所以它的地址栏还是原来的地址。
+2. `redirect` 是服务端根据逻辑，发送一个状态码，告诉浏览器重新去请求那个地址。所以地址栏显示的是新的 URL. 所以 redirect 等于客 户端向服务器端发出两次 request，同时也接受两次 response。
 
 *   从数据共享来说
 
-forward: 转发页面和转发到的页面可以共享 request 里面的数据.redirect: 不能共享数据.redirect 不仅可以重定向到当前应用程序的其他资源，还可以重定向到同一个站点上的其他应用程序中的资源，甚至是使用绝对 URL 重定向到其他站点的资源.forward 方法 只能在同一个 Web 应用程序内的资源之间转发请求.forward 是服务器内部的一种操作.redirect 是服务器通知客户端，让客户端重新发起请求。所以，你可以说 redirect 是一种间接的请求，但是你不能说” 一个请求是属于 forward 还是 redirect “。
+1. `forward`: 转发页面和转发到的页面可以共享 request 里面的数据.
+2. `redirect`: 不能共享数据.redirect 不仅可以重定向到当前应用程序的其他资源，还可以重定向到同一个站点上的其他应用程序中的资源，甚至是使用绝对 URL 重定向到其他站点的资源.forward 方法 只能在同一个 Web 应用程序内的资源之间转发请求.forward 是服务器内部的一种操作.redirect 是服务器通知客户端，让客户端重新发起请求。
+> 所以，你可以说 redirect 是一种间接的请求，但是你不能说” 一个请求是属于 forward 还是 redirect “。
 
 *   从运用地方来说
 
-forward: 一般用于用户登陆的时候，根据角色转发到相应的模块. redirect: 一般用于用户注销登陆时返回主页面和跳转到其它的网站等。
+1. `forward`: 一般用于用户登陆的时候，根据角色转发到相应的模块. 
+2. `redirect`: 一般用于用户注销登陆时返回主页面和跳转到其它的网站等。
 
 *   从效率来说
 
-forward: 高。
+1. `forward`: 高。
 
-redirect: 低。
+2. `redirect`: 低。
 
 ## request.getAttribute () 和 request.getParameter () 有何区别？
 
-1.  request.getParameter () 取得是通过容器的实现来取得通过类似 post，get 等方式传入的数据。
-2.  getAttribute 是返回对象，getParameter 返回字符串。
-3.  getAttribute () 一向是和 setAttribute () 一起使用的，只有先用 setAttribute () 设置之后，才能够通过 getAttribute () 来获得值，它们传递的是 Object 类型的数据。而且必须在同一个 request 对象中使用才有效。, 而 getParameter () 是接收表单的 get 或者 post 提交过来的参数。
+1.  `getParameter()` 取得是通过容器的实现来取得通过类似 post，get 等方式传入的数据。
+2.  `getAttribute()` 是返回对象，`getParameter()` 返回字符串。
+3.  `getAttribute()` 一向是和 `setAttribute()` 一起使用的，只有先用 `setAttribute()` 设置之后，才能够通过 `getAttribute()` 来获得值，它们传递的是 Object 类型的数据。而且必须在同一个 request 对象中使用才有效。, 而 `getParameter()` 是接收表单的 get 或者 post 提交过来的参数。
 
 ## MVC 的各个部分都有那些技术来实现？如何实现？
 
@@ -43,15 +47,15 @@ MVC 是 Model－View－Controller 的简写。Model 代表的是应用的业务�
 
 ## JSP 有哪些内置对象？作用分别是什么？
 
-1.  request 用户端请求，此请求会包含来自 GET/POST 请求的参数；
-2.  response 网页传回用户端的回应；
-3.  pageContext 网页的属性是在这里管理；
-4.  session 与请求有关的会话期；
-5.  application 封装服务器运行环境的对象；
-6.  out 输出服务器响应的输出流对象；
-7.  config Web 应用的配置对象；
-8.  page JSP 网页本身；
-9.  exception 封装页面抛出异常的对象。
+1.  `request` 用户端请求，此请求会包含来自 GET/POST 请求的参数；
+2.  `response` 网页传回用户端的回应；
+3.  `pageContext` 网页的属性是在这里管理；
+4.  `session` 与请求有关的会话期；
+5.  `application` 封装服务器运行环境的对象；
+6.  `out` 输出服务器响应的输出流对象；
+7.  `config Web` 应用的配置对象；
+8.  `page JSP` 网页本身；
+9.  `exception` 封装页面抛出异常的对象。
 
 ## 说一下 JSP 的 4 种作用域？
 
@@ -89,13 +93,13 @@ Session 的工作原理是客户端登录完成之后，服务器会创建对应
 *   设置页面编码，若是 jsp 页面，需编写代码:
 
 ```jsp
-	<%@page language="java" pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" %>
+<%@page language="java" pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" %>
 ```
 
 若是 html 页面，在网页头部（ <head>< /head> ）中添加下面这段代码:
 
 ```html
-	< meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 ```
 
 *   将 form 表单提交方式变为 post 方式，即添加 `method="post"`；在 Servlet 类中编写代码 `request.setCharacterEncoding("UTF-8")`，而且必须写在第一行。
@@ -103,7 +107,7 @@ Session 的工作原理是客户端登录完成之后，服务器会创建对应
 
 ## 你的项目中使用过哪些 JSTL 标签？
 
-项目中主要使用了 JSTL 的核心标签库，包括 `< c:if>`、`< c:choose>`、`< c: when>`、`< c: otherwise>`、`< c:forEach>` 等，主要用于构造循环和分支结构以控制显示逻辑。虽然 JSTL 标签库提供了 `core`、`sql`、`fmt`、`xml` 等标签库，但是实际开发中建议只使 用核心标签库（core），而且最好只使用分支和循环标签并辅以表达式语言（EL），这样才能真正做到数据显示和业务逻辑的分离，这才是最佳实践。
+项目中主要使用了 JSTL 的核心标签库，包括 `<c:if>`、`<c:choose>`、`<c:when>`、`<c:otherwise>`、`<c:forEach>` 等，主要用于构造循环和分支结构以控制显示逻辑。虽然 JSTL 标签库提供了 `core`、`sql`、`fmt`、`xml` 等标签库，但是实际开发中建议只使 用核心标签库（core），而且最好只使用分支和循环标签并辅以表达式语言（EL），这样才能真正做到数据显示和业务逻辑的分离，这才是最佳实践。
 
 ## 怎么防止重复提交？
 
@@ -114,14 +118,14 @@ Session 的工作原理是客户端登录完成之后，服务器会创建对应
 
 ## Request 对象的主要方法有哪些？
 
-<table width="1008"><tbody><tr><td width="250">方法</td><td width="527">解释</td></tr><tr><td>setAttribute(String name,Object)</td><td>设置名字为 name 的 request 的参数值</td></tr><tr><td>getAttribute(String name)</td><td>返回由 name 指定的属性值</td></tr><tr><td>getAttributeNames()</td><td>返回 request 对象所有属性的名字集合，结果是一个枚举的实例</td></tr><tr><td>getCookies()</td><td>返回客户端的所有</td></tr><tr><td>getCharacterEncoding()</td><td>返回请求中的字符编码方式 = getContentLength () ：返回请求的 Body 的长度</td></tr><tr><td>getParameter(String name)</td><td>获得客户端传送给服务器端的有 name 指定的参数值</td></tr><tr><td>getRequestURI()</td><td>获取发出请求字符串的客户端地址</td></tr><tr><td>getRemoteAddr()</td><td>获取客户端的 IP 地址</td></tr><tr><td>getRemoteHost()</td><td>获取客户端的名字</td></tr><tr><td>getServletPath()</td><td>获取客户端所请求的脚本文件的路径</td></tr><tr><td>getServerPort()</td><td>获取服务器的端口号</td></tr><tr><td>removeAttribute(String name)</td><td>删除请求中的一个属性</td></tr></tbody></table>
+<table><tbody><tr><td>方法</td><td>解释</td></tr><tr><td>setAttribute(String name,Object)</td><td>设置名字为 name 的 request 的参数值</td></tr><tr><td>getAttribute(String name)</td><td>返回由 name 指定的属性值</td></tr><tr><td>getAttributeNames()</td><td>返回 request 对象所有属性的名字集合，结果是一个枚举的实例</td></tr><tr><td>getCookies()</td><td>返回客户端的所有</td></tr><tr><td>getCharacterEncoding()</td><td>返回请求中的字符编码方式 = getContentLength () ：返回请求的 Body 的长度</td></tr><tr><td>getParameter(String name)</td><td>获得客户端传送给服务器端的有 name 指定的参数值</td></tr><tr><td>getRequestURI()</td><td>获取发出请求字符串的客户端地址</td></tr><tr><td>getRemoteAddr()</td><td>获取客户端的 IP 地址</td></tr><tr><td>getRemoteHost()</td><td>获取客户端的名字</td></tr><tr><td>getServletPath()</td><td>获取客户端所请求的脚本文件的路径</td></tr><tr><td>getServerPort()</td><td>获取服务器的端口号</td></tr><tr><td>removeAttribute(String name)</td><td>删除请求中的一个属性</td></tr></tbody></table>
 
 ## JSP 中动态 include 和静态 include 的区别？
 
 *   静态 include：语法：
 
 ```jsp
-	<%@ include file="文件名" %>
+<%@ include file="文件名" %>
 ```
 
 相当于复制，编辑时将对应的文件包含进来，当内容变化时，不会再一次对其编译，不易维护。
@@ -132,7 +136,7 @@ Session 的工作原理是客户端登录完成之后，服务器会创建对应
 
 ## 什么情况下调用 doGet () 和 doPost ()?
 
-默认情况是调用 doGet () 方法，JSP 页面中的 Form 表单的 method 属性设置为 post 的时候，调用的为 doPost () 方法；为 get 的时候，调用 deGet () 方法。
+默认情况是调用 `doGet()` 方法，JSP 页面中的 Form 表单的 method 属性设置为 post 的时候，调用的为 `doPost()` 方法；为 get 的时候，调用 `deGet()` 方法。
 
 ## get 和 post 的区别？
 
