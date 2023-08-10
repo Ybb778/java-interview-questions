@@ -53,19 +53,19 @@ select 课程名称 from Course where 编号 in (select Sc.课程编号 from Stu
 
 下面是学生表的（Student）的结构说明
 
-<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td>字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">s_id</td><td>学号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">s_name</td><td>学生姓名</td><td>字符</td><td>50</td><td>Not Null</td></tr><tr><td height="19">s_age</td><td>学生年龄</td><td>数值</td><td>3</td><td>Not Null</td></tr><tr><td height="19">s_sex</td><td>学生性别</td><td>字符</td><td>1</td><td>Not Null</td></tr></tbody></table>
+<table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="19">字段名称</td><td>字段解释</td><td >字段类型</td><td>字段长度</td><td>约束</td></tr><tr><td height="19">s_id</td><td>学号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">s_name</td><td>学生姓名</td><td>字符</td><td>50</td><td>Not Null</td></tr><tr><td height="19">s_age</td><td>学生年龄</td><td>数值</td><td>3</td><td>Not Null</td></tr><tr><td height="19">s_sex</td><td>学生性别</td><td>字符</td><td>1</td><td>Not Null</td></tr></tbody></table>
 
 下面是教师表（Teacher ）的结构说明
 
-<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td>字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">t_id</td><td>教师编号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">t_name</td><td>教师姓名</td><td>字符</td><td>50</td><td>Not Null</td></tr></tbody></table>
+<table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="19">字段名称</td><td>字段解释</td><td >字段类型</td><td>字段长度</td><td>约束</td></tr><tr><td height="19">t_id</td><td>教师编号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">t_name</td><td>教师姓名</td><td>字符</td><td>50</td><td>Not Null</td></tr></tbody></table>
 
 下面是课程表（Course）的结构说明
 
-<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td>字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">c_id</td><td>课程编号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">c_name</td><td>课程名字</td><td>字符</td><td>50</td><td>Not Null</td></tr><tr><td height="19">t_id</td><td>教师编号</td><td>字符</td><td>10</td><td>Not Null</td></tr></tbody></table>
+<table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="19">字段名称</td><td>字段解释</td><td >字段类型</td><td>字段长度</td><td>约束</td></tr><tr><td height="19">c_id</td><td>课程编号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">c_name</td><td>课程名字</td><td>字符</td><td>50</td><td>Not Null</td></tr><tr><td height="19">t_id</td><td>教师编号</td><td>字符</td><td>10</td><td>Not Null</td></tr></tbody></table>
 
 下面是成绩表（SC）的结构说明
 
-<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td>字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">s_id</td><td>学号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">c_id</td><td>课程编号</td><td>字符</td><td>10</td><td>Not Null</td></tr><tr><td height="19">score</td><td>成绩</td><td>数值</td><td>3</td><td>Not Null</td></tr></tbody></table>
+<table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="19">字段名称</td><td>字段解释</td><td >字段类型</td><td>字段长度</td><td>约束</td></tr><tr><td height="19">s_id</td><td>学号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">c_id</td><td>课程编号</td><td>字符</td><td>10</td><td>Not Null</td></tr><tr><td height="19">score</td><td>成绩</td><td>数值</td><td>3</td><td>Not Null</td></tr></tbody></table>
 
 ### 查询 “001” 课程比 “002” 课程成绩高的所有学生的学号；
 
