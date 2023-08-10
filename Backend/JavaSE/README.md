@@ -18,10 +18,10 @@
 
 定义：Java 语言是强类型语言，对于每一种数据都定义了明确的具体的数据类型，在内存中分配了不同大小的内存空间。
 
-*   数值型：整数类型 (byte,short,int,long)
-*   数值型：浮点类型 (float,double)
-*   字符型 (char)
-*   布尔型 (boolean)
+*   数值型：整数类型 (`byte`,`short`,`int`,`long`)
+*   数值型：浮点类型 (`float`,`double`)
+*   字符型 (`char`)
+*   布尔型 (`boolean`)
 
 ## 什么 Java 注释？
 
@@ -69,17 +69,17 @@
 
 ## String 类的常用方法都有那些？
 
-1.  indexOf ()：返回指定字符的索引。
-2.  charAt ()：返回指定索引处的字符。
-3.  replace ()：字符串替换。
-4.  trim ()：去除字符串两端空白。
-5.  split ()：分割字符串，返回一个分割后的字符串数组。
-6.  getBytes ()：返回字符串的 byte 类型数组。
-7.  length ()：返回字符串长度。
-8.  toLowerCase ()：将字符串转成小写字母。
-9.  toUpperCase ()：将字符串转成大写字符。
-10.  substring ()：截取字符串。
-11.  equals ()：字符串比较。
+1.  `indexOf()`：返回指定字符的索引。
+2.  `charAt()`：返回指定索引处的字符。
+3.  `replace()`：字符串替换。
+4.  `trim()`：去除字符串两端空白。
+5.  `split()`：分割字符串，返回一个分割后的字符串数组。
+6.  `getBytes()`：返回字符串的 byte 类型数组。
+7.  `length()`：返回字符串长度。
+8.  `toLowerCase()`：将字符串转成小写字母。
+9.  `toUpperCase()`：将字符串转成大写字符。
+10.  `substring()`：截取字符串。
+11.  `equals()`：字符串比较。
 
 ## String 和 StringBuffer、StringBuilder 的区别是什么？String 为什么是不可变的？
 
@@ -98,18 +98,47 @@ ChatGPT 的回答：
 
 ## int 和 Integer 有什么区别？
 
-Java 是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入了基本数据类型，但是为了能够将这些基本数据类型当成对象操作，Java 为每一个基本数据类型都引入了对应的包装类型（wrapper class），int 的包装类就是 Integer，从 Java 5 开始引入了自动装箱 / 拆箱机制，使得二者可以相互转换。
+Java 是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入了基本数据类型，但是为了能够将这些基本数据类型当成对象操作，Java 为每一个基本数据类型都引入了对应的包装类型（Wrapper Class），int 的包装类就是 Integer，从 Java 5 开始引入了自动装箱 / 拆箱机制，使得二者可以相互转换。
 
 ## Java 为每个原始类型提供了哪些包装类型？
 
-*   原始类型: boolean，char，byte，short，int，long，float，double
-*   包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double
+*   原始类型: `boolean`、`char`、`byte`、`short`、`int`、`long`、`float`、`double`
+*   包装类型：`Boolean`、`Character`、`Byte`、`Short`、`Integer`、`Long`、`Float`、`Double`
 
 ## ArrayList、LinkedList、Vector 的区别？
 
-1.  ArrayList,Vector 底层是由数组实现，LinkedList 底层是由双线链表实现，从底层的实现可以得出它们的性能问题。
-2.  ArrayList,Vector 插入速度相对较慢，查询速度相对较快，而 LinkedList 插入速度较快，而查询速度较慢。再者由于 Vevtor 使用了线程安全锁，所以 ArrayList 的运行效率高于 Vector。
+~~1.  ArrayList,Vector 底层是由数组实现，LinkedList 底层是由双线链表实现，从底层的实现可以得出它们的性能问题。~~
+~~2.  ArrayList,Vector 插入速度相对较慢，查询速度相对较快，而 LinkedList 插入速度较快，而查询速度较慢。再者由于 Vevtor 使用了线程安全锁，所以 ArrayList 的运行效率高于 Vector。~~
 
+### 底层数据结构：
+
+1. ArrayList 使用动态数组来存储元素，可以根据需要自动调整大小。
+2. LinkedList 使用双向链表来存储元素，每个元素都包含对前一个和后一个元素的引用。
+3. Vector 类似于 ArrayList，也使用动态数组，但在操作上是同步的（线程安全的）。
+
+### 性能：
+
+1. ArrayList 具有随机访问高效的特点，因为可以通过索引直接访问元素，时间复杂度为 O(1)。
+2. LinkedList 在插入和删除元素时效率较高，因为只需要调整链表中的指针，但随机访问的效率较低，时间复杂度为 O(n)。
+3. Vector 由于同步操作，性能可能比 ArrayList 稍差。
+
+### 线程安全性：
+
+1. ArrayList 和 LinkedList 不是线程安全的，需要额外的同步措施来在多线程环境中使用。
+2. Vector 是线程安全的，因为它的方法都是同步的，但这可能导致性能下降。
+
+### 迭代器：
+
+1. ArrayList 和 Vector 的迭代器是快速失败的，即在迭代过程中如果有其他线程修改了集合，会抛出 ConcurrentModificationException 异常。
+2. LinkedList 的迭代器不是快速失败的，因为在迭代时进行修改不会抛出异常。
+
+### 用途：
+
+1. 如果需要频繁进行随机访问和读取操作，选择 ArrayList。
+2. 如果需要频繁进行插入和删除操作，选择 LinkedList。
+3. Vector 在现代 Java 中用得相对较少，通常可以使用 ArrayList 来替代，除非需要特定的同步操作。
+
+> **总的来说，选择适当的集合类取决于你的使用场景和需求。如果没有特殊需求，ArrayList 通常是一个不错的默认选择，因为它在大多数情况下都表现良好。**
 ## HashMap 和 HashTable 的区别？
 
 1.  线程是否安全： HashMap 是非线程安全的 HashTable 是线程安全的；HashTable 内部的方法基本都经过 Synchronized 修饰。（如果你要保证线程安全的话就使用 ConcurrentHashMap 吧！）。
