@@ -9,20 +9,20 @@ MyBatis 是一个可以自定义 SQL、存储过程和高级映射的持久层�
 
 MyBatis 动态 SQL 是为了解决在 SQL 语句中出现条件判断、分页、动态排序等情况，使得 SQL 语句能够更加灵活地生成。MyBatis 的动态 SQL 包括以下几种：
 
-1.  if 元素：根据条件判断动态生成 SQL 语句；
-2.  choose（when、otherwise）元素：类似于 Java 中的 switch 语句，根据条件选择生成 SQL 语句；
-3.  where 元素：用于构建动态查询条件，自动去除查询语句中不必要的 where 或 and 关键字；
-4.  set 元素：用于构建动态更新条件；
-5.  foreach 元素：用于遍历一个集合，动态生成 SQL 语句。
+1.  `if` 元素：根据条件判断动态生成 SQL 语句；
+2.  `choose（when、otherwise）`元素：类似于 Java 中的 switch 语句，根据条件选择生成 SQL 语句；
+3.  `where` 元素：用于构建动态查询条件，自动去除查询语句中不必要的 where 或 and 关键字；
+4.  `set` 元素：用于构建动态更新条件；
+5.  `foreach` 元素：用于遍历一个集合，动态生成 SQL 语句。
 
 动态 SQL 的执行原理是：MyBatis 在解析 Mapper.xml 文件时，会将动态 SQL 语句解析成一个完整的 SQL 语句，然后再将这个完整的 SQL 语句传递给 JDBC 执行。在解析 Mapper.xml 文件时，MyBatis 使用 OGNL 表达式来进行条件判断和数据遍历等操作，然后根据条件生成相应的 SQL 语句，最终生成一条完整的 SQL 语句，传递给 JDBC 执行。
 
 ## #{} 和 ${} 的区别是什么？
 
-1.  #{} 是预编译处理，${} 是字符串替换。
-2.  MyBatis 在处理 #{} 时，会将 SQL 中的 #{} 替换为？号，调用 PreparedStatement 的 set 方法来赋值。
-3.  MyBatis 在处理 ${} 时，就是把 ${} 替换成变量的值。
-4.  使用 #{} 可以有效的防止 SQL 注入，提高系统安全性。
+1.  `#{}` 是预编译处理，`${}` 是字符串替换。
+2.  MyBatis 在处理 `#{}` 时，会将 SQL 中的 `#{}` 替换为？号，调用 PreparedStatement 的 set 方法来赋值。
+3.  MyBatis 在处理 `${}` 时，就是把 `${}` 替换成变量的值。
+4.  使用 `#{}` 可以有效的防止 SQL 注入，提高系统安全性。
 
 ## 为什么说 MyBatis 是半自动 ORM 映射工具？它与全自动的区别在哪里？
 
