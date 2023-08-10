@@ -18,11 +18,11 @@ Dubbo 是阿里巴巴开源的基于 Java 的高性能 RPC 分布式服务框架
 
 ## Dubbo 推荐使用什么序列化框架，你知道的还有哪些？
 
-推荐使用 Hessian 序列化，还有 Duddo、FastJson、Java 自带序列化。
+推荐使用 Hessian 序列化，还有 Dubbo、FastJson、Java 自带序列化。
 
 ## 你还了解别的分布式框架吗？
 
-别的还有 Spring cloud、Facebook 的 Thrift、Twitter 的 Finagle 等。
+别的还有 Spring Cloud、Facebook 的 Thrift、Twitter 的 Finagle 等。
 
 ## Dubbo 内置了哪几种服务容器？
 
@@ -30,15 +30,15 @@ Spring Container，Jetty Container，Log4j Container
 
 ## Dubbo 核心的配置有哪些？
 
-<table width="550"><tbody><tr><td width="155">配置</td><td width="179">配置说明</td></tr><tr><td>dubbo:service</td><td>服务配置</td></tr><tr><td>dubbo:reference</td><td>引用配置</td></tr><tr><td>dubbo:protocol</td><td>协议配置</td></tr><tr><td>dubbo:application</td><td>应用配置</td></tr><tr><td>dubbo:module</td><td>模块配置</td></tr><tr><td>dubbo:registry</td><td>注册中心配置</td></tr><tr><td>dubbo:monitor</td><td>监控中心配置</td></tr><tr><td>dubbo:provider</td><td>提供方配置</td></tr><tr><td>dubbo:consumer</td><td>消费方配置</td></tr><tr><td>dubbo:method</td><td>方法配置</td></tr><tr><td>dubbo:argument</td><td>参数配置</td></tr></tbody></table>
+<table><tbody><tr><td>配置</td><td>配置说明</td></tr><tr><td>dubbo:service</td><td>服务配置</td></tr><tr><td>dubbo:reference</td><td>引用配置</td></tr><tr><td>dubbo:protocol</td><td>协议配置</td></tr><tr><td>dubbo:application</td><td>应用配置</td></tr><tr><td>dubbo:module</td><td>模块配置</td></tr><tr><td>dubbo:registry</td><td>注册中心配置</td></tr><tr><td>dubbo:monitor</td><td>监控中心配置</td></tr><tr><td>dubbo:provider</td><td>提供方配置</td></tr><tr><td>dubbo:consumer</td><td>消费方配置</td></tr><tr><td>dubbo:method</td><td>方法配置</td></tr><tr><td>dubbo:argument</td><td>参数配置</td></tr></tbody></table>
 
 ## Dubbo 有哪几种集群容错方案，默认是哪种？
 
-<table width="550"><tbody><tr><td width="161">集群容错方案</td><td width="337">说明</td></tr><tr><td>Failover Cluster</td><td>失败自动切换，自动重试其他服务器（默认）</td></tr><tr><td>Failfast Cluster</td><td>快速失败，立即报错，只发起一次调用</td></tr><tr><td>Failsafe Cluster</td><td>失败安全，出现异常时，直接忽略</td></tr><tr><td>Failback Cluster</td><td>失败自动恢复，记录失败请求，定时重发</td></tr><tr><td>Forking Cluster</td><td>并行调用多个服务器，只要一个成功即返回</td></tr><tr><td>Broadcast Cluster</td><td>广播逐个调用所有提供者，任意一个报错则报错</td></tr></tbody></table>
+<table><tbody><tr><td>集群容错方案</td><td>说明</td></tr><tr><td>Failover Cluster</td><td>失败自动切换，自动重试其他服务器（默认）</td></tr><tr><td>Failfast Cluster</td><td>快速失败，立即报错，只发起一次调用</td></tr><tr><td>Failsafe Cluster</td><td>失败安全，出现异常时，直接忽略</td></tr><tr><td>Failback Cluster</td><td>失败自动恢复，记录失败请求，定时重发</td></tr><tr><td>Forking Cluster</td><td>并行调用多个服务器，只要一个成功即返回</td></tr><tr><td>Broadcast Cluster</td><td>广播逐个调用所有提供者，任意一个报错则报错</td></tr></tbody></table>
 
 ## Dubbo 有哪几种负载均衡策略，默认是哪种？
 
-<table width="627"><tbody><tr><td width="199">负载均衡策略</td><td width="307">说明</td></tr><tr><td>Random LoadBalance</td><td>随机，按权重设置随机概率（默认）</td></tr><tr><td>RoundRobin LoadBalance</td><td>轮询，按公约后的权重设置轮询比率</td></tr><tr><td>LeastActive LoadBalance</td><td>最少活跃调用数，相同活跃数的随机</td></tr><tr><td>ConsistentHash LoadBalance</td><td>一致性 Hash，相同参数的请求总是发到同一提供者</td></tr></tbody></table>
+<table><tbody><tr><td>负载均衡策略</td><td>说明</td></tr><tr><td>Random LoadBalance</td><td>随机，按权重设置随机概率（默认）</td></tr><tr><td>RoundRobin LoadBalance</td><td>轮询，按公约后的权重设置轮询比率</td></tr><tr><td>LeastActive LoadBalance</td><td>最少活跃调用数，相同活跃数的随机</td></tr><tr><td>ConsistentHash LoadBalance</td><td>一致性 Hash，相同参数的请求总是发到同一提供者</td></tr></tbody></table>
 
 ## Dubbo 的优势
 
