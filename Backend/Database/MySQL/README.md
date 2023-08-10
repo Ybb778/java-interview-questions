@@ -20,7 +20,7 @@ Mysql 数据库技术
 客户订单表 (C\_ORDER) 有以下字段: id, custom\_id, commodity, count, order\_date.
 
 ```sql
-	SELECT * FROM c_order ORDER BY order_date DESC LIMIT 0,5;
+SELECT * FROM c_order ORDER BY order_date DESC LIMIT 0,5;
 ```
 
 ## 数据库设计中，一对多如何处理？
@@ -40,65 +40,65 @@ Mysql 数据库技术
 *   写一个 SQL 语句，查询选修了计算机原理的学生学号和姓名
 
 ```sql
-	select 学号，姓名 from Student where 学号 in（select 学号 from Sc where 课程编号 in(Select 课程编号 from Course where 课程名称 = ‘计算机原理’)）
+select 学号，姓名 from Student where 学号 in（select 学号 from Sc where 课程编号 in(Select 课程编号 from Course where 课程名称 = ‘计算机原理’)）
 ```
 
 *   写一个 SQL 语句，查询 “周星驰” 同学选修了的课程名字
 
 ```sql
-	select 课程名称 from Course where 编号 in (select Sc.课程编号 from Student,Sc where Student.姓名=’周星驰’ and Student.学号 = Sc.学号)
+select 课程名称 from Course where 编号 in (select Sc.课程编号 from Student,Sc where Student.姓名=’周星驰’ and Student.学号 = Sc.学号)
 ```
 
 ## 表结构说明
 
 下面是学生表的（Student）的结构说明
 
-<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td width="69">字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">s_id</td><td>学号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">s_name</td><td>学生姓名</td><td>字符</td><td>50</td><td>Not Null</td></tr><tr><td height="19">s_age</td><td>学生年龄</td><td>数值</td><td>3</td><td>Not Null</td></tr><tr><td height="19">s_sex</td><td>学生性别</td><td>字符</td><td>1</td><td>Not Null</td></tr></tbody></table>
+<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td>字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">s_id</td><td>学号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">s_name</td><td>学生姓名</td><td>字符</td><td>50</td><td>Not Null</td></tr><tr><td height="19">s_age</td><td>学生年龄</td><td>数值</td><td>3</td><td>Not Null</td></tr><tr><td height="19">s_sex</td><td>学生性别</td><td>字符</td><td>1</td><td>Not Null</td></tr></tbody></table>
 
 下面是教师表（Teacher ）的结构说明
 
-<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td width="69">字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">t_id</td><td>教师编号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">t_name</td><td>教师姓名</td><td>字符</td><td>50</td><td>Not Null</td></tr></tbody></table>
+<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td>字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">t_id</td><td>教师编号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">t_name</td><td>教师姓名</td><td>字符</td><td>50</td><td>Not Null</td></tr></tbody></table>
 
 下面是课程表（Course）的结构说明
 
-<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td width="69">字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">c_id</td><td>课程编号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">c_name</td><td>课程名字</td><td>字符</td><td>50</td><td>Not Null</td></tr><tr><td height="19">t_id</td><td>教师编号</td><td>字符</td><td>10</td><td>Not Null</td></tr></tbody></table>
+<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td>字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">c_id</td><td>课程编号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">c_name</td><td>课程名字</td><td>字符</td><td>50</td><td>Not Null</td></tr><tr><td height="19">t_id</td><td>教师编号</td><td>字符</td><td>10</td><td>Not Null</td></tr></tbody></table>
 
 下面是成绩表（SC）的结构说明
 
-<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td width="69">字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">s_id</td><td>学号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">c_id</td><td>课程编号</td><td>字符</td><td>10</td><td>Not Null</td></tr><tr><td height="19">score</td><td>成绩</td><td>数值</td><td>3</td><td>Not Null</td></tr></tbody></table>
+<table border="0" width="345" cellspacing="0" cellpadding="0"><tbody><tr><td width="69" height="19">字段名称</td><td>字段解释</td><td width="69">字段类型</td><td width="69">字段长度</td><td width="69">约束</td></tr><tr><td height="19">s_id</td><td>学号</td><td>字符</td><td>10</td><td>PK</td></tr><tr><td height="19">c_id</td><td>课程编号</td><td>字符</td><td>10</td><td>Not Null</td></tr><tr><td height="19">score</td><td>成绩</td><td>数值</td><td>3</td><td>Not Null</td></tr></tbody></table>
 
 ### 查询 “001” 课程比 “002” 课程成绩高的所有学生的学号；
 
 ```sql
-	select a.s_id from (select s_id,score from SC where C_ID='001') a,(select s_id,scorefrom SC where C_ID='002') b where a.score>b.score and a.s_id=b.s_id;
+select a.s_id from (select s_id,score from SC where C_ID='001') a,(select s_id,scorefrom SC where C_ID='002') b where a.score>b.score and a.s_id=b.s_id;
 ```
 
 ### 查询平均成绩大于 60 分的同学的学号和平均成绩；
 
 ```sql
-	select S_ID,avg(score) from sc group by S_ID having avg(score) >60;
+select S_ID,avg(score) from sc group by S_ID having avg(score) >60;
 ```
 
 ### 查询所有同学的学号、姓名、选课数、总成绩；
 
 ```sql
-	select Student.S_ID,Student.Sname,count(SC.C_ID),sum(score) from Student left Outer join SC on Student.S_ID=SC.S_ID group by Student.S_ID,Sname
+select Student.S_ID,Student.Sname,count(SC.C_ID),sum(score) from Student left Outer join SC on Student.S_ID=SC.S_ID group by Student.S_ID,Sname
 ```
 
 ### 查询姓 “李” 的老师的个数；
 
 ```sql
-	select count(distinct(Tname)) from Teacher where Tname like '李%';
+select count(distinct(Tname)) from Teacher where Tname like '李%';
 ```
 
 ### 查询所有课程成绩小于 60 分的同学的学号、姓名；
 
 ```sql
-	select S_ID,Sname from Student where S_ID not in (select S.S_ID from Student AS S,SC where S.S_ID=SC.S_ID and score>60);
+select S_ID,Sname from Student where S_ID not in (select S.S_ID from Student AS S,SC where S.S_ID=SC.S_ID and score>60);
 ```
 
 ### 查询至少有一门课与学号为 “1001” 的同学所学相同的同学的学号和姓名；
 
 ```sql
-	select distinct S_ID,Sname from Student,SC where Student.S_ID=SC.S_ID and SC.C_ID in (select C_ID from SC where S_ID='1001');
+select distinct S_ID,Sname from Student,SC where Student.S_ID=SC.S_ID and SC.C_ID in (select C_ID from SC where S_ID='1001');
 ```
