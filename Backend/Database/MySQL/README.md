@@ -33,7 +33,7 @@ SELECT * FROM c_order ORDER BY order_date DESC LIMIT 0,5;
 
 ## MySQL 数据库中，常用的数据类型
 
-<table width="619"><tbody><tr><td width="132">类型名称</td><td width="423">说明</td></tr><tr><td>int(Integer)</td><td>整数类型</td></tr><tr><td>double</td><td>小数类型</td></tr><tr><td>decimal(m,d)</td><td>指定整数位与小数位长度的小数类型</td></tr><tr><td>date</td><td>日期类型，格式为 yyyy-MM-dd，包含年月日，不包含时分秒</td></tr><tr><td>datetime</td><td>日期类型，格式为 yyyy-MM-dd HH:mm:ss，包含年月日时分秒</td></tr><tr><td>timestamp</td><td>日期类型，时间戳</td></tr><tr><td>varchar(M)</td><td>文本类型，M 为 0~65535 之间的整数</td></tr></tbody></table>
+<table><tbody><tr><td>类型名称</td><td width="423">说明</td></tr><tr><td>int(Integer)</td><td>整数类型</td></tr><tr><td>double</td><td>小数类型</td></tr><tr><td>decimal(m,d)</td><td>指定整数位与小数位长度的小数类型</td></tr><tr><td>date</td><td>日期类型，格式为 yyyy-MM-dd，包含年月日，不包含时分秒</td></tr><tr><td>datetime</td><td>日期类型，格式为 yyyy-MM-dd HH:mm:ss，包含年月日时分秒</td></tr><tr><td>timestamp</td><td>日期类型，时间戳</td></tr><tr><td>varchar(M)</td><td>文本类型，M 为 0~65535 之间的整数</td></tr></tbody></table>
 
 ## Student 学生表（学号，姓名、性别、年龄、组织部门），Course 课程表（编号，课程名称），Sc 选课表（学号，课程编号，成绩）
 
