@@ -3,19 +3,19 @@ Redis 存储系统
 
 ## 什么是 Redis？
 
-Remote Dictionary Server (Redis) 是一个开源的使用 ANSI C 语言编写、支持网络、可基于内存亦可持久化的日志型、Key- Value 数据库，并提供多种语言的 API。它通常被称为数据结构服务器，因为值（value）可以是 字符串 (String), 哈希 (Map), 列表 (list), 集合 (sets) 和 有序集合 (sorted sets) 等类型。
+Remote Dictionary Server (Redis) 是一个开源的使用 ANSI C 语言编写、支持网络、可基于内存亦可持久化的日志型、Key- Value 数据库，并提供多种语言的 API。它通常被称为数据结构服务器，因为值（value）可以是 字符串 (String), 哈希 (Map), 链表 (List), 集合 (Set) 和 有序集合 (Sorted Set) 等类型。
 
 ## Redis 的特点什么是？
 
-1.  支持多种数据结构，如 String (字符串)、 List (列表)、Hash (哈希表)、Set (集合)、Sorted Set (有序集合)、HyperLogLog (基数估算)。
-2.  支持持久化操作，可以进行 aof 及 rdb 数据持久化到磁盘，从而进行数据备份或数据恢复等操作，较好的防止数据丢失的手段。
+1.  支持多种数据结构，如 String (字符串)、 List (链表)、Hash (哈希表)、Set (集合)、Sorted Set (有序集合)、HyperLogLog (基数估算)。
+2.  支持持久化操作，可以进行 AOF 及 RDB 数据持久化到磁盘，从而进行数据备份或数据恢复等操作，较好的防止数据丢失的手段。
 3.  支持通过 Replication 进行数据复制，通过 master-slave 机制，可以实时进行数据的同步复制，支持多级复制和增量复制，master-slave 机制是 Redis 进行 HA 的重要手段。
 4.  单进程请求，所有命令串行执行，并发情况下不需要考虑数据一致性问题。
 
 ## Redis 数据类型有哪些？
 
 1.  String (字符串)
-2.  Hash (hash 表)
+2.  Hash (哈希表)
 3.  List (链表)
 4.  Set (集合)
 5.  Sorted Set (有序集合 zset)
