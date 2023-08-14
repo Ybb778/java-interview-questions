@@ -23,27 +23,27 @@ Linux 系统
 
 
 
-```bash
+```shell
 vi 文件名 # 编辑方式查看，可修
 ```
 
-``` bash
+```shell
 cat 文件名 # 显示全部文件内
 ```
 
-```bash
+```shell
 more 文件名 # 分页显示文件内容
 ```
 
-``` bash
+```shell
 less 文件名 # 与more相似，更好的是可以往前翻页
 ```
 
-```bash
+```shell
 tail 文件名 # 仅查看尾部，还可以指定
 ```
 
-```bash
+```shell
 head 文件名 # 仅查看头部,还可以指定
 ```
 
@@ -51,8 +51,8 @@ head 文件名 # 仅查看头部,还可以指定
 
 ### 复制文件包括其子文件到自定目录
 
-```bash
-	cp -r sourceFolder targetFolder # 将名为"sourceFolder"的文件夹及其中的内容复制到名为"targetFolder"的文件夹中
+```shell
+cp -r sourceFolder targetFolder # 将名为"sourceFolder"的文件夹及其中的内容复制到名为"targetFolder"的文件夹中
 ```
 
 *   “cp” 是”copy” 的缩写，表示复制命令。
@@ -64,8 +64,8 @@ head 文件名 # 仅查看头部,还可以指定
 
 ### 创建目录
 
-```bash
-	mkdir newFloder # 创建一个名为"newFloder"的新文件夹（或者叫做目录）
+```shell
+mkdir newFloder # 创建一个名为"newFloder"的新文件夹（或者叫做目录）
 ```
 
 *   “mkdir” 是”make directory” 的缩写，表示创建目录的命令。
@@ -75,8 +75,8 @@ head 文件名 # 仅查看头部,还可以指定
 
 ### 删除目录（此目录是空目录）
 
-```bash
-	rmdir deleteEmptyFolder # 删除一个空的名为"deleteEmptyFolder"的文件夹（或者叫做目录）
+```shell
+rmdir deleteEmptyFolder # 删除一个空的名为"deleteEmptyFolder"的文件夹（或者叫做目录）
 ```
 
 *   “rmdir” 是”remove directory” 的缩写，表示删除目录的命令。
@@ -86,8 +86,8 @@ head 文件名 # 仅查看头部,还可以指定
 
 ### 删除文件包括其子文件
 
-```bash
-	rm -rf deleteFile # 删除名为"deleteFile"的文件或文件夹，包括其中的所有内容，而不进行任何提示或警告。
+```shell
+rm -rf deleteFile # 删除名为"deleteFile"的文件或文件夹，包括其中的所有内容，而不进行任何提示或警告。
 ```
 
 *   “rm” 是”remove” 的缩写，表示删除命令。
@@ -100,8 +100,8 @@ head 文件名 # 仅查看头部,还可以指定
 
 ### 解压文件
 
-```bash
-	tar -zxvf test.tar.gz # 解压缩名为"test.tar.gz"的压缩文件。
+```shell
+tar -zxvf test.tar.gz # 解压缩名为"test.tar.gz"的压缩文件。
 ```
 
 *   “tar” 是”tape archive” 的缩写，是一个常用的打包和压缩命令。
@@ -114,8 +114,8 @@ head 文件名 # 仅查看头部,还可以指定
 
 ### 解压 zip 文件
 
-```bash
-	unzip -oq file.zip # 解压缩名为"file.zip"的zip压缩文件，并且指定不进行任何交互操作和输出过程信息。
+```shell
+unzip -oq file.zip # 解压缩名为"file.zip"的zip压缩文件，并且指定不进行任何交互操作和输出过程信息。
 ```
 
 *   “unzip” 是解压缩命令。
