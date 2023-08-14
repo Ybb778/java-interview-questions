@@ -14,11 +14,11 @@ Remote Dictionary Server (Redis) 是一个开源的使用 ANSI C 语言编写、
 
 ## Redis 数据类型有哪些？
 
-1.  String (字符串)
-2.  Hash (哈希表)
-3.  List (链表)
-4.  Set (集合)
-5.  Sorted Set (有序集合 zset)
+1.  `String` (字符串)
+2.  `Hash` (哈希表)
+3.  `List` (链表)
+4.  `Set` (集合)
+5.  `Sorted Set` (有序集合 zset)
 
 ## Redis 的配置以及持久化方案有几种？
 
@@ -58,22 +58,22 @@ Remote Dictionary Server (Redis) 是一个开源的使用 ANSI C 语言编写、
 
 > 可以通过配置文件中的选项来设置持久化方案，例如：
 
-- save： 可以设置多个时间间隔，表示在这些间隔内，有多少个键被修改，则执行一次RDB快照。
-- appendonly： 将其设置为yes启用AOF持久化。
-- appendfsync： 设置AOF何时进行数据同步操作，可以是always、everysec或no。
+- `save`： 可以设置多个时间间隔，表示在这些间隔内，有多少个键被修改，则执行一次RDB快照。
+- `appendonly`： 将其设置为yes启用AOF持久化。
+- `appendfsync`： 设置AOF何时进行数据同步操作，可以是always、everysec或no。
 
 ## Redis 中的常用命令哪些？
 
-1.  hset 存储一个哈希键值对的集合
-2.  hget 获取一个哈希键的值
-3.  hdel 删除一个或多个字段
-4.  hgetall 获取一个哈希是键值对的集合
-5.  lpush key value 向链表左侧添加
-6.  rpush key value 向链表右侧添加
-7.  lpop key 从左边移出一个元素
-8.  rpop key 从右边移出一个元素
-9.  keys \* 返回所有的 key 可以加 \* 通配
-10.  exists key 判断 string 类型一个 key 是否存在 如果存在返回 1 否则返回 0
+1.  `hset` 存储一个哈希键值对的集合
+2.  `hget` 获取一个哈希键的值
+3.  `hdel` 删除一个或多个字段
+4.  `hgetall` 获取一个哈希是键值对的集合
+5.  `lpush key value` 向链表左侧添加
+6.  `rpush key value` 向链表右侧添加
+7.  `lpop key` 从左边移出一个元素
+8.  `rpop key` 从右边移出一个元素
+9.  `keys \*` 返回所有的 key 可以加 \* 通配
+10.  `exists key` 判断 string 类型一个 key 是否存在 如果存在返回 1 否则返回 0
 
 ## Redis 主要消耗什么物理资源？
 
@@ -91,12 +91,12 @@ Remote Dictionary Server (Redis) 是一个开源的使用 ANSI C 语言编写、
 
 ## Redis 有哪几种数据淘汰策略？
 
-1.  noeviction: 返回错误当内存限制达到，并且客户端尝试执行会让更多内存被使用的命令。
-2.  allkeys-lru: 尝试回收最少使用的键（LRU），使得新添加的数据有空间存放。
-3.  volatile-lru: 尝试回收最少使用的键（LRU），但仅限于在过期集合的键，使得新添加的数据有空间存放。
-4.  allkeys-random: 回收随机的键使得新添加的数据有空间存放。
-5.  volatile-random: 回收随机的键使得新添加的数据有空间存放，但仅限于在过期集合的键。
-6.  volatile-ttl: 回收在过期集合的键，并且优先回收存活时间（TTL）较短的键，使得新添加的数据有空间存放。
+1.  `noeviction`: 返回错误当内存限制达到，并且客户端尝试执行会让更多内存被使用的命令。
+2.  `allkeys-lru`: 尝试回收最少使用的键（LRU），使得新添加的数据有空间存放。
+3.  `volatile-lru`: 尝试回收最少使用的键（LRU），但仅限于在过期集合的键，使得新添加的数据有空间存放。
+4.  `allkeys-random`: 回收随机的键使得新添加的数据有空间存放。
+5.  `volatile-random`: 回收随机的键使得新添加的数据有空间存放，但仅限于在过期集合的键。
+6.  `volatile-ttl`: 回收在过期集合的键，并且优先回收存活时间（TTL）较短的键，使得新添加的数据有空间存放。
     
 ## Redis 官方为什么不提供 Windows 版本？
 
