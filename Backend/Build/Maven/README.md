@@ -25,7 +25,7 @@ Maven 仓库是基于简单文件系统存储的，集中化管理 Java API 资�
 
 ## Maven 常用命令有哪些？
 
-*   install
+*   `install`
 
 本地安装， 包含编译，打包，安装到本地仓库。
 
@@ -35,19 +35,19 @@ Maven 仓库是基于简单文件系统存储的，集中化管理 Java API 资�
 
 安装到本地仓库 – 将打包的 jar 文件，保存到本地仓库目录中。
 
-*   clean
+*   `clean`
 
 清除已编译信息。  
 删除工程中的 target 目录
 
-*   compile
+*   `compile`
 
 只编译。 javac 命令。
 
-*   deploy
+*   `deploy`
 
 部署。 常见于结合私服使用的命令。相当于是 install + 上传 jar 到私服。包含编译，打包，安装到本地仓库，上传到私服仓库。
 
-*   package
+*   `package`
 
 打包。 包含编译，打包两个功能。
