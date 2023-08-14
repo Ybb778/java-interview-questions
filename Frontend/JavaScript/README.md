@@ -1,7 +1,7 @@
 JavaScript 语言和 jQuery 技术
 ========================
 
-## JS 中如何将页面重定向到另一个页面？
+## JavaScript 中如何将页面重定向到另一个页面？
 
 1.  使用 `location.href`：
 ```javascript
@@ -21,12 +21,24 @@ window.location.replace ("https://www.baidu.com/")
 ## 如何在 JavaScript 中每 x 秒调用一个函数？
 
 ```javascript
-setInterval(function (){ alert("Hello"); }, 3000);
+setInterval(function (){ alert("Hello"); }, 3000);// 每隔 3000 毫秒（即 3 秒），执行一次匿名函数 `function (){ alert("Hello");
 ```
 
-## JS 中 == 和 === 区别是什么？
+## JavaScript 中 == 和 === 区别是什么？
 
 1.  对于 `String`,`Number` 等基础类型，`==` 和 `===`有区别：不同类型间比较，`==` 之比较 “转化成同一类型后的值” 看 “值” 是否相等，`===` 如果类型不同，其结果就是不等。同类型比较，直接进行 “值” 比较，两者结果一样。
+    - "==" 运算符：它执行的是弱类型比较，即在比较之前会进行类型转换。如果比较的两个值的类型不同，它会尝试将它们转换为相同的类型，然后再进行比较。例如：
+    ```javascript
+    console.log(1 == "1"); // 输出 true，因为 "1" 会被转换为数字 1
+    console.log(true == 1); // 输出 true，因为 true 会被转换为数字 1
+    console.log(null == undefined); // 输出 true，因为它们被认为是相等的特殊值
+    ```
+    - "===" 运算符：它执行的是严格类型比较，不会进行类型转换。只有在比较的两个值的类型和值都相等时，才会返回 true。例如：
+    ```javascript
+    console.log(1 === "1"); // 输出 false，因为它们的类型不同
+    console.log(true === 1); // 输出 false，因为它们的类型不同
+    console.log(null === undefined); // 输出 false，因为它们的类型不同
+    ```
 2.  对于 `Array`,`Object` 等高级类型，`==` 和 `===` 没有区别，进行 “指针地址” 比较。
 
 ## JavaScript 内置可用类型
