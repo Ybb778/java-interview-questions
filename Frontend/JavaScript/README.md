@@ -21,7 +21,7 @@ window.location.replace ("https://www.baidu.com/")
 ## 如何在 JavaScript 中每 x 秒调用一个函数？
 
 ```javascript
-setInterval(function (){ alert("Hello"); }, 3000);// 每隔 3000 毫秒（即 3 秒），执行一次匿名函数 `function (){ alert("Hello");
+setInterval(function (){ alert("Hello"); }, 3000); // 每隔 3000 毫秒（即 3 秒），执行一次匿名函数 `function (){ alert("Hello");
 ```
 
 ## JavaScript 中 == 和 === 区别是什么？
